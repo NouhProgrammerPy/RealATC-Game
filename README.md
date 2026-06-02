@@ -25,6 +25,4 @@ Please note the landing logic is still very early development, and may cause wei
   <li>Aircraft speed less than or equal to 250 kts.</li>
 </ol>
 
-There is no current way to keep track of score (wip), so for now, just enjoy...
-
 <h2>Have fun!</h2>
