@@ -5,7 +5,7 @@ This game, made using python, is a game where your objective is to manage the ai
 
 <h1>Setup:</h1>
 <ol>
-  <li>Download python: https://python.org/download</li>
+  <li>Download python: https://python.org/downloads</li>
   <li>Install dependencies:<br />
   `pip install pygame-ce` or `pip3 install pygame-ce`</li>
   <li>Go to releases: https://github.com/NouhProgrammerPy/RealATC-Game/releases and pick the newest version and download the 'ATC-Game.zip' file from the assets</li>
