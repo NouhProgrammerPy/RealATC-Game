@@ -18,11 +18,27 @@ Click on an aircraft to change its:
 </ul>
 Please note the landing logic is still very early development, and may cause weird stuff to happen, just make sure the aircraft is in a realistic enough place to land, and it should be fine.
 
-<h4>Landing Criteria</h4>
+<h3>Landing Criteria</h3>
 <ol>
   <li>Heading +-60 degrees from runway heading</li>
   <li>Aircraft less than or equal to 3,000 ft</li>
   <li>Aircraft speed less than or equal to 250 kts. <b>(Also applies for holding)</b></li>
 </ol>
+
+<h3>Holding</h3>
+Criterion: Aircraft speed less than or equal to 250 kts.
+<h4>Instuctions:</h4>
+<ol>
+  <li>Click on aircraft you want to hold</li>
+  <li>Press 'D' on your keyboard</li>
+  <li>Type in this format (no spaces):
+  \"(DIR)/(WYPT)\"</li>
+</ol>
+Example Format:
+
+Left holding pattern at MOGAV:
+L/MOGAV
+Right holding pattern at RAGSO:
+R/RAGSO
 
 <h2>Have fun!</h2>
