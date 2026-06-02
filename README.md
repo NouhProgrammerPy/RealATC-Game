@@ -3,6 +3,17 @@ This game, made using python, is a game where your objective is to manage the ai
 
 <b>This is still a very, very early release.</b> Many more features will be added to make this game better and better.
 
+<h1>Setup:</h1>
+<ol>
+  <li>Download python: https://python.org/download</li>
+  <li>Install dependencies:<br />
+  ```pip install pygame-ce``` or ```pip3 install pygame-ce```</li>
+  <li>Go to releases: https://github.com/NouhProgrammerPy/RealATC-Game/releases and pick the newest version and download the 'ATC-Game.zip' file from the assets</li>
+  <li>Extract the files</li>
+  <li>Run the extracted 'main.py'</li>
+  <li>Enjoy :)</li>
+</ol>
+
 <h1>Instructions and Logic:</h1>
 Make sure that there is enough seperation between aircraft (minimum 1,000 ft or 3 nm).
 
