@@ -32,7 +32,7 @@ Criterion: Aircraft speed less than or equal to 250 kts.
   <li>Click on aircraft you want to hold</li>
   <li>Press 'D' on your keyboard</li>
   <li>Type in this format (no spaces): <br />
-  \"(DIR)/(WYPT)\"</li>
+  "(DIR)/(WYPT)"</li>
 </ol>
 Example Format:<br />
 <br />
