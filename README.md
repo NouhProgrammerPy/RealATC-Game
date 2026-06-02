@@ -41,4 +41,17 @@ L/MOGAV<br />
 Right holding pattern at RAGSO:<br />
 R/RAGSO<br />
 
+<h3>Aircraft Icons</h3>
+The aircraft has a little text block above it to show information, it is in this format:<br />
+CALLSIGN<br />
+HEADING / TARGET<br />
+SIGN ALT / SPEED KT<br />
+
+<img width="57" height="33" alt="image" src="https://github.com/user-attachments/assets/b83bf56a-c74d-446d-9e18-36b88efe139f" /><br />
+For example, in the above aircraft,<br />
+Callsign is: ETD6802<br />
+It is heading at 115 degrees towards TOSBO<br />
+It is level at 4,000ft and its speed is 284 kts.<br />
+
+
 <h2>Have fun!</h2>
