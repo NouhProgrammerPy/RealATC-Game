@@ -31,14 +31,14 @@ Criterion: Aircraft speed less than or equal to 250 kts.
 <ol>
   <li>Click on aircraft you want to hold</li>
   <li>Press 'D' on your keyboard</li>
-  <li>Type in this format (no spaces):
+  <li>Type in this format (no spaces): <br />
   \"(DIR)/(WYPT)\"</li>
 </ol>
-Example Format:
-
-Left holding pattern at MOGAV:
-L/MOGAV
-Right holding pattern at RAGSO:
-R/RAGSO
+Example Format:<br />
+<br />
+Left holding pattern at MOGAV:<br />
+L/MOGAV<br />
+Right holding pattern at RAGSO:<br />
+R/RAGSO<br />
 
 <h2>Have fun!</h2>
