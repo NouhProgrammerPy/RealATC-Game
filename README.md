@@ -27,7 +27,7 @@ Please note the landing logic is still very early development, and may cause wei
 
 <h3>Holding</h3>
 Criterion: Aircraft speed less than or equal to 250 kts.
-<h4>Instuctions:</h4>
+<h4>Instructions:</h4>
 <ol>
   <li>Click on aircraft you want to hold</li>
   <li>Press 'D' on your keyboard</li>
