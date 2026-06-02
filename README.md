@@ -22,7 +22,7 @@ Please note the landing logic is still very early development, and may cause wei
 <ol>
   <li>Heading +-60 degrees from runway heading</li>
   <li>Aircraft less than or equal to 3,000 ft</li>
-  <li>Aircraft speed less than or equal to 250 kts.</li>
+  <li>Aircraft speed less than or equal to 250 kts. <b>(Also applies for holding)</b></li>
 </ol>
 
 <h2>Have fun!</h2>
