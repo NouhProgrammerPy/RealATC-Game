@@ -13,7 +13,7 @@ This game, made using python, is a game where your objective is to manage the ai
   <li>Run the extracted 'main.py'</li>
   <li>Enjoy :)</li>
 </ol>
-Note: This is going to be replaced with an automated '.exe'(Windows) and '.sh'(Linux+Mac) scripts
+Note: This is going to be replaced with two automated '.exe'(Windows) and '.sh'(Linux+Mac) scripts
 
 <h1>Instructions and Logic:</h1>
 Make sure that there is enough seperation between aircraft (minimum 1,000 ft or 3 nm).
