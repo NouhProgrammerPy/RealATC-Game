@@ -12,11 +12,11 @@ def load_game():
     )
 
 
-BG_COLOR = "#77E4C8"
+BG_COLOR = "#77E4FC"
 ENTRY_BG_COLOR = "#36C2CE"
 
 window = Tk()
-window.title("ATC Game")
+window.title("NouhProgrammerPy/RealATC-Game")
 window.config(padx=50, pady=50, bg=BG_COLOR)
 window.resizable(False, False)
 
@@ -80,7 +80,7 @@ start_button = Button(
 )
 
 version_label = Label(
-    text="Pre-Release",
+    text="v0.3 Beta",
     font=("Arial", 8),
     bg=BG_COLOR
 )
