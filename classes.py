@@ -45,7 +45,7 @@ def update_cmd(cmd, value, airplane_callsign, airplane_list):
                 return
             target.new_instructions(land=["Lnd", value.upper()])
         case "TOF":
-            raise NotImplementedError("TOF still not implemented! For takeoff traffic, check versions v0.3+")
+            raise NotImplementedError("TOF still not implemented! For takeoff traffic, check versions v0.4+")
         case "Hold":
             if target.speed > 250:
                 return
@@ -60,7 +60,7 @@ def update_cmd(cmd, value, airplane_callsign, airplane_list):
 
 class Airplane:
     def __init__(self, callsign, x_pos, y_pos, speed, heading, altitude: int, altitude_climb_rate_fpm,
-                 texture, opacity: int = 1):
+                 texture, opacity: int = 1, max_trail_length: int = 1750):
         self.callsign = callsign
         self.x_pos = x_pos
         self.y_pos = y_pos
@@ -71,7 +71,7 @@ class Airplane:
         self.trail = []
         self.climb_descent_sign = "="
         self.altitude_climb_rate_fpm = altitude_climb_rate_fpm
-        self.max_trail_length = 2000
+        self.max_trail_length = max_trail_length
         self.opacity = opacity
         self.texture = pygame.image.load(texture).convert_alpha()
         self.texture = pygame.transform.scale(self.texture, (10, 10))
@@ -86,6 +86,7 @@ class Airplane:
         self.hold_dir = "R"  # or "L"
         self.waypoint_name = ""
         ###################
+        self.score_timer = 0
         self.targets = {
             "Waypoint": None,
             "Heading": self.heading,
@@ -332,7 +333,12 @@ class Airplane:
         self.x_pos += delta_time * dx
         self.y_pos += delta_time * dy
         if self.near_col:
-            score_change -= 1
+            self.score_timer += delta_time
+            while self.score_timer >= 15:
+                score_change -= 40
+                self.score_timer -= 15
+        else:
+            self.score_timer = 0
         return score_change
 
 
@@ -412,9 +418,15 @@ class DistanceWarner:
             for airplane2 in airplane_list:
                 if airplane is airplane2:
                     continue
+                dist_diff = 50 if not (
+                        airplane.targets["Status"].startswith("Lnd") or airplane2.targets["Status"].startswith(
+                    "Lnd")) else 25 if not airplane.targets["Status"] == airplane2.targets["Status"] else 40
+                alt_diff = 1000 if not (
+                        airplane.targets["Status"].startswith("Lnd") or airplane2.targets["Status"].startswith(
+                    "Lnd")) else 200 if not airplane.targets["Status"] == airplane2.targets["Status"] else 300
                 dist = math.hypot(airplane.x_pos - airplane2.x_pos, airplane.y_pos - airplane2.y_pos)
                 altitude_diff = abs(airplane.altitude - airplane2.altitude)
-                if dist < 50 and altitude_diff < 1000:
+                if dist < dist_diff and altitude_diff < alt_diff:
                     airplane.near_col, airplane2.near_col = True, True
                 if dist < 10 and altitude_diff < 70:
                     game_over = True
@@ -422,7 +434,7 @@ class DistanceWarner:
 
 
 class AirplaneSpawner:
-    def __init__(self, cooldown_s, max_airplanes):
+    def __init__(self, cooldown_s, max_airplanes, performance_mode):
         self.cooldown_s, self.max_airplanes = cooldown_s, max_airplanes
         self.callsigns = ["ETD", "UAE", "MEA", "QTR", "ETD", "ETD", "UAE", "UAE", "UAE", "UAE", "THY"]
         self.positions = [
@@ -434,6 +446,7 @@ class AirplaneSpawner:
             [800, 450, 250, 300, 3000, 2000]
         ]
         self.last_pos = []
+        self.performance_mode = performance_mode
 
     def new_plane(self):
         retrying = True
@@ -445,5 +458,9 @@ class AirplaneSpawner:
         num = randint(1, 9999)
         num = str(num) if num >= 1000 else f"{num:03d}"
         callsign = f"{choice(self.callsigns)}{num}"
-        return Airplane(callsign, position[0], position[1], position[2], position[3], position[4], position[5],
-                        "texture1.png")
+        if self.performance_mode == "HIGH":
+            return Airplane(callsign, position[0], position[1], position[2], position[3], position[4], position[5],
+                            "texture1.png")
+        else:
+            return Airplane(callsign, position[0], position[1], position[2], position[3], position[4], position[5],
+                            "texture1.png", max_trail_length=2)
